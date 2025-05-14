@@ -3,7 +3,6 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 import datetime
-from get_img_extention import get_img_extention
 
 
 def fetch_nasa_epic(url, token):
