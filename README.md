@@ -53,11 +53,26 @@ pip install -r requirements.txt
 
 ![image](https://github.com/user-attachments/assets/35db7e56-3716-4951-9e39-b575c7f79c08)
 
+Результат запуска модуля:
+
+![image](https://github.com/user-attachments/assets/6333f752-0814-4165-8ec4-f57f90e572f3)
+
+
 ### fetch_nasa_apod_images.py : скачивает картинки дня с [NASA APOD](https://api.nasa.gov/#apod)
 Модуль скачивает 30 случайных картинок дня с [NASA APOD](https://api.nasa.gov/#apod).
 
+Результат запуска модуля:
+
+![image](https://github.com/user-attachments/assets/e0a2adf5-4486-4550-9be8-2042c903b2cf)
+
+
 ### fetch_nasa_epic_images.py : скачивает фото планеты Земля с [NASA EPIC](https://api.nasa.gov/#epic)
 Модуль скачивает 5 последних сделанных фото Земли с [NASA EPIC](https://api.nasa.gov/#epic).
+
+Результат запуска модуля:
+
+![image](https://github.com/user-attachments/assets/cc8ace12-ba1b-406f-a10a-80d35a2acd81)
+
 
 ### manual_publish_tg.py : публикует фотографию в Telegram-канал вручную
 Модуль публикует одну фотографию из папки images в Telegram-канал. Если не указать название фотографии, модуль выберет случайную картинку из папки images и опубликует ее:
