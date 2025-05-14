@@ -18,7 +18,7 @@ def fetch_nasa_apod(url, token):
 
     links = []
     for link in response_data:
-        links.append(link['url'])
+        links.append(link.get('url'))
 
     nasa_apod_filename = 'images/nasa_apod_{n}{extention}'
 
