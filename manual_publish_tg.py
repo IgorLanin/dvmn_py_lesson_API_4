@@ -31,9 +31,11 @@ def main():
 
     if not user_input.img_name or user_input.img_name not in photos_from_dir:
         random_img_name = random.choice(photos_from_dir)
-        bot.send_document(chat_id=tg_chat_id, document=open(f'images/{random_img_name}', 'rb'))
+        with open(f'images/{random_img_name}', 'rb') as document:
+            bot.send_document(chat_id=tg_chat_id, document=document)
     else:
-        bot.send_document(chat_id=tg_chat_id, document=open(f'images/{user_input.img_name}', 'rb'))
+        with open(f'images/{user_input.img_name}', 'rb') as document:
+            bot.send_document(chat_id=tg_chat_id, document=document)
 
 
 if __name__ == '__main__':
