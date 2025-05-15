@@ -6,12 +6,13 @@ import datetime
 from download_images import download_images
 
 
-def fetch_nasa_epic(url, token):
+def fetch_nasa_epic(token):
+    nasa_epic_api = "https://api.nasa.gov/EPIC/api/natural"
     payload = {
         "api_key": token
     }
 
-    response = requests.get(url, params=payload)
+    response = requests.get(nasa_epic_api, params=payload)
     response.raise_for_status()
 
     last_five_slices = 5
@@ -36,9 +37,8 @@ def main():
 
     load_dotenv()
     nasa_api_token = os.getenv("NASA_API_KEY", default=None)
-    nasa_epic_url = "https://api.nasa.gov/EPIC/api/natural"
 
-    fetch_nasa_epic(nasa_epic_url, nasa_api_token)
+    fetch_nasa_epic(nasa_api_token)
 
 
 if __name__ == '__main__':
