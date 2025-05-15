@@ -1,6 +1,7 @@
 import argparse
 import requests
 from pathlib import Path
+from download_images import download_images
 
 
 def create_parser():
@@ -25,14 +26,11 @@ def fetch_spacex_last_launch(url):
     api_response = response.json()
 
     links = api_response["links"]["flickr"]["original"]
-    spacex_filename = 'images/spacex{}.jpg'
 
     for link_number, link in enumerate(links, start=1):
-        response = requests.get(link)
-        response.raise_for_status()
-
-        with open(spacex_filename.format(link_number), 'wb') as file:
-            file.write(response.content)
+        spacex_filename = f'images/spacex{link_number}.jpg'
+        
+        download_images(link, spacex_filename)
 
 
 def main():
