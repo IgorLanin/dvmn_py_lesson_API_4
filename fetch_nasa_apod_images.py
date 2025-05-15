@@ -3,6 +3,7 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 from get_img_extention import get_img_extention
+from download_images import download_images
 
 
 def fetch_nasa_apod(url, token):
@@ -19,18 +20,14 @@ def fetch_nasa_apod(url, token):
 
     links = [link.get('url') for link in api_response]
 
-    nasa_apod_filename = 'images/nasa_apod_{n}{extention}'
-
     for link_number, link in enumerate(links, start=1):
         img_extention = get_img_extention(link)
         if not img_extention:
             continue
 
-        response = requests.get(link)
-        response.raise_for_status()
+        nasa_apod_filename = f'images/nasa_apod_{link_number}{img_extention}'
 
-        with open(nasa_apod_filename.format(extention=img_extention, n=link_number), 'wb') as file:
-            file.write(response.content)
+        download_images(link, nasa_apod_filename)
 
 
 def main():
