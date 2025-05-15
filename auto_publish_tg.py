@@ -30,7 +30,7 @@ def main():
 
     photos_from_dir = os.listdir(os.path.join('images'))
 
-    secs_delay = (int(user_input.hours)) # * 60 * 60
+    secs_delay = (int(user_input.hours) * 60 * 60)
 
     while True:
         for photo in photos_from_dir:
@@ -39,11 +39,6 @@ def main():
             sleep(secs_delay)
 
         random.shuffle(photos_from_dir)
-
-        for photo in photos_from_dir:
-            with open(f'images/{photo}', 'rb') as document:
-                bot.send_document(chat_id=tg_chat_id, document=document)
-            sleep(secs_delay)
 
 
 if __name__ == '__main__':
