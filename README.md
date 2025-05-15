@@ -63,6 +63,7 @@ python fetch_spacex_images.py 5eb87d47ffd86e000604b38a
 
 ### fetch_nasa_apod_images.py : скачивает картинки дня с [NASA APOD](https://api.nasa.gov/#apod)
 Модуль скачивает 30 случайных картинок дня с [NASA APOD](https://api.nasa.gov/#apod).
+Важно: модуль скачает меньше 30 картинок в случае, если, вместо картинки дня, например, ссылка на видео.
 
 Результат запуска модуля:
 
