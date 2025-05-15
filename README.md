@@ -12,9 +12,9 @@
 ## Как установить
 
 Python3 должен быть уже установлен. Рекомендуется использовать версию [Python 3.8.9](https://www.python.org/downloads/release/python-389/). Затем используйте pip (или pip3, есть есть конфликт с Python2) для установки зависимостей:
-
+```
 pip install -r requirements.txt
-
+```
 Для запуска программы понадобятся:
 - Ключ API с сайта [NASA](https://api.nasa.gov/). Для его получения необходимо заполнить форму регистрации и нажать "Sign Up":
 
@@ -49,7 +49,10 @@ pip install -r requirements.txt
 
 Важно: если фотографии не скачались, это значит, что во время последнего запуска/конкретного запуска по id, они не были сделаны. В таком случае, укажите id другого запуска и запустите скрипт повторно. Пример: во время запуска id ```5eb87d47ffd86e000604b38a``` фотографии были сделаны и модуль скачает их.
 
-Команда для запуска модуля с id запуска: ```python fetch_spacex_images.py 5eb87d47ffd86e000604b38a```.
+Команда для запуска модуля с id запуска: 
+```
+python fetch_spacex_images.py 5eb87d47ffd86e000604b38a
+```
 
 ![image](https://github.com/user-attachments/assets/35db7e56-3716-4951-9e39-b575c7f79c08)
 
@@ -81,7 +84,10 @@ pip install -r requirements.txt
 
 Если указать название конкретной картинки, то опубликует выбранную картинку. 
 
-Команда для запуска модуля: ```python manual_publish_tg.py nasa_apod_4.jpg```.
+Команда для запуска модуля: 
+```
+python manual_publish_tg.py nasa_apod_4.jpg
+```
 
 ![image](https://github.com/user-attachments/assets/e042516d-c97a-41cd-a9d6-df820dd3e40b)
 
@@ -90,7 +96,10 @@ pip install -r requirements.txt
 
 ![image](https://github.com/user-attachments/assets/a36dc470-5d06-499a-b0d7-d97b62151d9f)
 
-Можно указать количество часов самостоятельно. Для этого понадобится написать количество часов в виде числа. Команда для запуска: ```python auto_publish_tg.py 5```.
+Можно указать количество часов самостоятельно. Для этого понадобится написать количество часов в виде числа. Команда для запуска: 
+```
+python auto_publish_tg.py 5
+```
 
 ![image](https://github.com/user-attachments/assets/86018891-54ba-4127-aee7-06d76dae2240)
 
