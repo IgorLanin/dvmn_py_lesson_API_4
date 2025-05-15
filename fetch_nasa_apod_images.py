@@ -6,14 +6,15 @@ from get_img_extention import get_img_extention
 from download_images import download_images
 
 
-def fetch_nasa_apod(url, token):
+def fetch_nasa_apod(token):
+    nasa_apod_api = "https://api.nasa.gov/planetary/apod"
     num_of_imgs = 30
     payload = {
         "api_key": token,
         "count": num_of_imgs
     }
 
-    response = requests.get(url, params=payload)
+    response = requests.get(nasa_apod_api, params=payload)
     response.raise_for_status()
 
     api_response = response.json()
@@ -35,8 +36,8 @@ def main():
 
     load_dotenv()
     nasa_api_token = os.getenv("NASA_API_KEY", default=None)
-    nasa_apod_url = "https://api.nasa.gov/planetary/apod"
-    fetch_nasa_apod(nasa_apod_url, nasa_api_token)
+
+    fetch_nasa_apod(nasa_api_token)
 
 
 if __name__ == '__main__':
