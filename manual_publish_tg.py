@@ -25,16 +25,16 @@ def main():
     tg_chat_id = os.getenv('TG_CHAT_ID')
 
     parser = create_parser()
-    user_input = parser.parse_args()
+    image_file_name = parser.parse_args()
 
     photos_from_dir = os.listdir(os.path.join('images'))
 
-    if not user_input.img_name or user_input.img_name not in photos_from_dir:
+    if not image_file_name.img_name or image_file_name.img_name not in photos_from_dir:
         random_img_name = random.choice(photos_from_dir)
         with open(f'images/{random_img_name}', 'rb') as document:
             bot.send_document(chat_id=tg_chat_id, document=document)
     else:
-        with open(f'images/{user_input.img_name}', 'rb') as document:
+        with open(f'images/{image_file_name.img_name}', 'rb') as document:
             bot.send_document(chat_id=tg_chat_id, document=document)
 
 
