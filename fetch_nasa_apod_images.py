@@ -6,9 +6,10 @@ from get_img_extention import get_img_extention
 
 
 def fetch_nasa_apod(url, token):
+    num_of_imgs = 30
     payload = {
         "api_key": token,
-        "count": 30
+        "count": num_of_imgs
     }
 
     response = requests.get(url, params=payload)
