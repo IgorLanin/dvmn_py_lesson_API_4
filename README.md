@@ -36,7 +36,7 @@ pip install -r requirements.txt
 Полученные данные необходимо сохранить в ```.env```-файл:
 - Ключ API с сайта [NASA](https://api.nasa.gov/) положить в переменную ```NASA_API_KEY```.
 - Токен Telegram-бота положить в переменную ```TG_TOKEN```.
-- id Telegram-канала положить в переменную ```CHAT_ID```.
+- id Telegram-канала положить в переменную ```TG_CHAT_ID```.
 
 ## Описание работы модулей
 
