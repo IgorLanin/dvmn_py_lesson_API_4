@@ -23,7 +23,7 @@ def main():
 
     tg_bot_token = os.getenv('TG_TOKEN')
     bot = telegram.Bot(token=tg_bot_token)
-    chat_id = os.getenv('CHAT_ID')
+    tg_chat_id = os.getenv('TG_CHAT_ID')
 
     parser = create_parser()
     user_input = parser.parse_args()
@@ -34,13 +34,13 @@ def main():
 
     while True:
         for photo in photos_from_dir:
-            bot.send_document(chat_id=chat_id, document=open(f'images/{photo}', 'rb'))
+            bot.send_document(chat_id=tg_chat_id, document=open(f'images/{photo}', 'rb'))
             sleep(secs_delay)
 
         random.shuffle(photos_from_dir)
 
         for photo in photos_from_dir:
-            bot.send_document(chat_id=chat_id, document=open(f'images/{photo}', 'rb'))
+            bot.send_document(chat_id=tg_chat_id, document=open(f'images/{photo}', 'rb'))
             sleep(secs_delay)
 
 
