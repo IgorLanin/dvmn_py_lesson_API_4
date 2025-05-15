@@ -22,9 +22,9 @@ def fetch_spacex_last_launch(url):
     response = requests.get(url)
     response.raise_for_status()
 
-    response_data = response.json()
+    api_response = response.json()
 
-    links = response_data["links"]["flickr"]["original"]
+    links = api_response["links"]["flickr"]["original"]
     spacex_filename = 'images/spacex{}.jpg'
 
     for link_number, link in enumerate(links, start=1):
