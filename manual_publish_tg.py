@@ -22,7 +22,7 @@ def main():
 
     tg_bot_token = os.getenv('TG_TOKEN')
     bot = telegram.Bot(token=tg_bot_token)
-    chat_id = os.getenv('CHAT_ID')
+    tg_chat_id = os.getenv('TG_CHAT_ID')
 
     parser = create_parser()
     user_input = parser.parse_args()
@@ -31,9 +31,9 @@ def main():
 
     if not user_input.img_name or user_input.img_name not in photos_from_dir:
         random_img_name = random.choice(photos_from_dir)
-        bot.send_document(chat_id=chat_id, document=open(f'images/{random_img_name}', 'rb'))
+        bot.send_document(chat_id=tg_chat_id, document=open(f'images/{random_img_name}', 'rb'))
     else:
-        bot.send_document(chat_id=chat_id, document=open(f'images/{user_input.img_name}', 'rb'))
+        bot.send_document(chat_id=tg_chat_id, document=open(f'images/{user_input.img_name}', 'rb'))
 
 
 if __name__ == '__main__':
