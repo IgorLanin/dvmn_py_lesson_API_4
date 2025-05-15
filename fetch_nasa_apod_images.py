@@ -15,10 +15,10 @@ def fetch_nasa_apod(url, token):
     response = requests.get(url, params=payload)
     response.raise_for_status()
 
-    response_data = response.json()
+    api_response = response.json()
 
     links = []
-    for link in response_data:
+    for link in api_response:
         links.append(link.get('url'))
 
     nasa_apod_filename = 'images/nasa_apod_{n}{extention}'
