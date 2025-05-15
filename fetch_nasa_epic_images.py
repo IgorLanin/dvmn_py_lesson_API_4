@@ -13,7 +13,8 @@ def fetch_nasa_epic(url, token):
     response = requests.get(url, params=payload)
     response.raise_for_status()
 
-    response_data = response.json()[:5]
+    last_five_slices = 5
+    response_data = response.json()[:last_five_slices]
 
     links = []
     for each_epic in response_data:
