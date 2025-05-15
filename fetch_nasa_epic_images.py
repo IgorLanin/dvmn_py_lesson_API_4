@@ -14,10 +14,10 @@ def fetch_nasa_epic(url, token):
     response.raise_for_status()
 
     last_five_slices = 5
-    response_data = response.json()[:last_five_slices]
+    api_response = response.json()[:last_five_slices]
 
     links = []
-    for each_epic in response_data:
+    for each_epic in api_response:
         nasa_epic_date = datetime.datetime.fromisoformat(each_epic['date']).strftime("%Y/%m/%d")
         nasa_epic_name = each_epic['image']
         nasa_epic_url = f"https://api.nasa.gov/EPIC/archive/natural/{nasa_epic_date}/png/{nasa_epic_name}.png"
