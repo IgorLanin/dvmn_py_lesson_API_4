@@ -4,6 +4,7 @@ import argparse
 import random
 from dotenv import load_dotenv
 from time import sleep
+from tg_send_image import send_image
 
 
 def create_parser():
@@ -34,8 +35,8 @@ def main():
 
     while True:
         for photo in photos_from_dir:
-            with open(f'images/{photo}', 'rb') as document:
-                bot.send_document(chat_id=tg_chat_id, document=document)
+            img_path = f'images/{photo}'
+            send_image(bot, img_path, tg_chat_id)
             sleep(secs_delay)
 
         random.shuffle(photos_from_dir)
