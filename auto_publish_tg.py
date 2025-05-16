@@ -26,11 +26,11 @@ def main():
     tg_chat_id = os.getenv('TG_CHAT_ID')
 
     parser = create_parser()
-    user_input = parser.parse_args()
+    postponement = parser.parse_args()
 
     photos_from_dir = os.listdir(os.path.join('images'))
 
-    secs_delay = (int(user_input.hours) * 60 * 60)
+    secs_delay = (int(postponement.hours) * 60 * 60)
 
     while True:
         for photo in photos_from_dir:
