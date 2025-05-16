@@ -3,7 +3,7 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 import datetime
-from download_images import download_images
+from download_images import download_image
 
 
 def fetch_nasa_epic(token):
@@ -29,7 +29,7 @@ def fetch_nasa_epic(token):
     for link_number, link in enumerate(links, start=1):
         nasa_epic_filename = f'images/nasa_epic_{link_number}.png'
 
-        download_images(link, nasa_epic_filename, payload=payload)
+        download_image(link, nasa_epic_filename, payload=payload)
 
 
 def main():

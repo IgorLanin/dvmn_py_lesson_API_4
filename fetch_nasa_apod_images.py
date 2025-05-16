@@ -3,7 +3,7 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 from get_img_extention import get_img_extention
-from download_images import download_images
+from download_images import download_image
 
 
 def fetch_nasa_apod(token):
@@ -28,7 +28,7 @@ def fetch_nasa_apod(token):
 
         nasa_apod_filename = f'images/nasa_apod_{link_number}{img_extention}'
 
-        download_images(link, nasa_apod_filename)
+        download_image(link, nasa_apod_filename)
 
 
 def main():

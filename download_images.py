@@ -1,7 +1,7 @@
 import requests
 
 
-def download_images(get_data, filename, payload=None):
+def download_image(get_data, filename, payload=None):
     response = requests.get(get_data, params=payload)
     response.raise_for_status()
 

@@ -1,7 +1,7 @@
 import argparse
 import requests
 from pathlib import Path
-from download_images import download_images
+from download_images import download_image
 
 
 def create_parser():
@@ -30,7 +30,7 @@ def fetch_spacex_last_launch(url):
     for link_number, link in enumerate(links, start=1):
         spacex_filename = f'images/spacex{link_number}.jpg'
         
-        download_images(link, spacex_filename)
+        download_image(link, spacex_filename)
 
 
 def main():
