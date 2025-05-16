@@ -8,10 +8,10 @@ from download_images import download_image
 
 def fetch_nasa_apod(token):
     nasa_apod_api = "https://api.nasa.gov/planetary/apod"
-    num_of_imgs = 30
+    imgs_number = 30
     payload = {
         "api_key": token,
-        "count": num_of_imgs
+        "count": imgs_number
     }
 
     response = requests.get(nasa_apod_api, params=payload)
