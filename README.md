@@ -111,6 +111,8 @@ python auto_publish_tg.py 5
 ### download_images.py : скачивает фотографии и сохраняет их в папку
 Вспомогательный модуль, который скачивает фотографии и сохраняет их в папку ```images```. Нужен для работы модулей ```fetch_nasa_apod_images.py```, ```fetch_nasa_epic_images.py```, ```fetch_spacex_images.py```.
 
+### tg_send_image.py : отправляет фото в Telegram-канал
+Вспомогательный модуль, который отправляет фото в Telegram-канал. Нужен для работы модулей ```auto_publish_tg.py```, ```manual_publish_tg.py```.
 
 ## Цель проекта
 Код написан в образовательных целях на онлайн-курсе для веб-разработчиков [dvmn.org](https://dvmn.org/).
