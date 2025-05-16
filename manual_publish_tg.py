@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 import os
 import argparse
 import random
+from tg_send_image import send_image
 
 
 def create_parser():
@@ -31,11 +32,11 @@ def main():
 
     if not image_file_name.img_name or image_file_name.img_name not in photos_from_dir:
         random_img_name = random.choice(photos_from_dir)
-        with open(f'images/{random_img_name}', 'rb') as document:
-            bot.send_document(chat_id=tg_chat_id, document=document)
+        img_path = f'images/{random_img_name}'
     else:
-        with open(f'images/{image_file_name.img_name}', 'rb') as document:
-            bot.send_document(chat_id=tg_chat_id, document=document)
+        img_path = f'images/{image_file_name.img_name}'
+
+    send_image(bot, img_path, tg_chat_id)
 
 
 if __name__ == '__main__':
