@@ -37,9 +37,9 @@ def main():
     Path('images').mkdir(parents=True, exist_ok=True)
 
     parser = create_parser()
-    user_input = parser.parse_args()
+    launch_id = parser.parse_args()
 
-    spacex_url = "https://api.spacexdata.com/v5/launches/{}".format(user_input.launch_id)
+    spacex_url = "https://api.spacexdata.com/v5/launches/{}".format(launch_id.launch_id)
 
     fetch_spacex_last_launch(spacex_url)
 
